@@ -126,17 +126,19 @@ public class InventoryManager implements Listener {
      */
     @EventHandler
     private void inventoryClickEvent(InventoryClickEvent event) {
-        // Check if it was a player who clicked.
-        if (!(event.getWhoClicked() instanceof Player player)) return;
+        if (!InventoryManager.inventoryInterfaceList.contains(event.getInventory())) {
+            // Check if it was a player who clicked.
+            if (!(event.getWhoClicked() instanceof Player player)) return;
 
-        // Attempt to get the inventory interface.
-        InventoryInterface inventoryInterface = InventoryManager.getFromOwner(player);
-        if (inventoryInterface == null) return;
+            // Attempt to get the inventory interface.
+            InventoryInterface inventoryInterface = InventoryManager.getFromOwner(player);
+            if (inventoryInterface == null) return;
 
-        if (event.getRawSlot() > event.getInventory().getSize()) {
+            if (event.getRawSlot() > event.getInventory().getSize()) {
 
-            if (event.getAction() == InventoryAction.MOVE_TO_OTHER_INVENTORY) {
-                event.setCancelled(true);
+                if (event.getAction() == InventoryAction.MOVE_TO_OTHER_INVENTORY) {
+                    event.setCancelled(true);
+                }
             }
         }
     }
