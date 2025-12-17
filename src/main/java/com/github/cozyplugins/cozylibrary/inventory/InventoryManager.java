@@ -126,7 +126,7 @@ public class InventoryManager implements Listener {
      */
     @EventHandler
     private void inventoryClickEvent(InventoryClickEvent event) {
-        if (InventoryManager.inventoryInterfaceList.contains(event.getInventory())) {
+        if (doesInventoryBelongToCozy(event.getInventory())) {
             // Check if it was a player who clicked.
             if (!(event.getWhoClicked() instanceof Player player)) return;
 
@@ -141,5 +141,14 @@ public class InventoryManager implements Listener {
                 }
             }
         }
+    }
+
+    private boolean doesInventoryBelongToCozy(Inventory inventory){
+        for (InventoryInterface inv : inventoryInterfaceList){
+            if (inv.getInventory() == inventory){
+                return true;
+            }
+        }
+        return false;
     }
 }
