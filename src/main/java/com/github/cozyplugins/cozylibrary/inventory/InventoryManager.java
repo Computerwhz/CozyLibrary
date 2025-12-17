@@ -126,7 +126,7 @@ public class InventoryManager implements Listener {
      */
     @EventHandler
     private void inventoryClickEvent(InventoryClickEvent event) {
-        if (!InventoryManager.inventoryInterfaceList.contains(event.getInventory())) {
+        if (InventoryManager.inventoryInterfaceList.contains(event.getInventory())) {
             // Check if it was a player who clicked.
             if (!(event.getWhoClicked() instanceof Player player)) return;
 
