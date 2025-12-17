@@ -60,9 +60,10 @@
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
-            <version>2.10.10</version>
+            <version>2.11.6</version>
             <scope>provided</scope>
         </dependency>
+
         <!-- Jupiter -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -91,9 +92,9 @@
         </dependency>
         <!-- Protocol -->
         <dependency>
-            <groupId>com.comphenix.protocol</groupId>
+            <groupId>net.dmulloy2</groupId>
             <artifactId>ProtocolLib</artifactId>
-            <version>5.0.0</version>
+            <version>5.4.0</version>
             <scope>provided</scope>
         </dependency>
         <!-- Vault -->
